@@ -1,0 +1,2 @@
+alias ls="exa --icons --git --grid -l"
+alias p="cd $HOME/Developer/projects"
