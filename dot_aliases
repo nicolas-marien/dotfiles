@@ -1,4 +1,7 @@
-alias ls="exa --icons --git --grid -l"
+alias ls="exa --icons --git --grid -l -a"
 alias p="cd $HOME/Developer/projects"
 alias tmux="tmux -2"
 alias e="nvim"
+alias ce="chezmoi edit"
+alias ca="chezmoi apply"
+

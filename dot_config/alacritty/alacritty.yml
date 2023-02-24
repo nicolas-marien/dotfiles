@@ -2,8 +2,8 @@ window:
   opacity: 1
   dynamic_title: true
   padding:
-    x: 5
-    y: 5
+    x: 20
+    y: 20
 font: 
   normal:
     family: CaskaydiaCove Nerd Font
