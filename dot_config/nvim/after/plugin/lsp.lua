@@ -56,13 +56,24 @@ local on_attach = function(_, bufnr)
     )
 end
 
-
 mason_lspconfig.setup_handlers {
     function(server_name)
+        if server_name ~= 'tsserver' then
+            
         require('lspconfig')[server_name].setup {
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {},
         }
+    else 
+        require('lspconfig').tsserver.setup{
+
+            root_dir = require("lspconfig").util.root_pattern("package.json"),
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {}
+        }
+        end
+    
     end,
 }

@@ -10,8 +10,6 @@ return {
         require('neotest').setup({
             adapters = {
                 require('neotest-jest')({
-                    jestCommand = "npm test --",
-                    jestConfigFile = "custom.jest.config.ts",
                     env = { CI = true },
                     cwd = function(path)
                         return vim.fn.getcwd()
@@ -19,5 +17,7 @@ return {
                 }),
             }
         })
+        vim.keymap.set('n', '<leader>tf', "<cmd>lua require'neotest'.run.run(vim.fn.expand('%'))<cr>", {desc = "[T]rigger test for current [F]ile"})
+        vim.keymap.set('n', '<leader>tt', "<cmd>lua require'neotest'.run.run()<cr>", {desc = "[T]rigger test for current [T]est"})
     end
 }

@@ -15,7 +15,7 @@ return {
         'rafamadriz/friendly-snippets'
     },
     config = function()
-        require('neodev').setup()
+        require('neodev').setup{ library = { plugins = { "neotest" }, types = true } }
         require('mason').setup()
         require('fidget').setup()
         require 'mason-lspconfig'.setup {
