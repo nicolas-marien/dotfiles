@@ -6,8 +6,16 @@ return {
 		dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
 		config = function()
 			require('telescope').setup {
-
+                pickers = {
+                    find_files = {
+                        hidden = true,
+                    }
+                },
 				defaults = {
+                    file_ignore_patterns = {
+                        ".git",
+                        ".node_modules"
+                    },
 					prompt_prefix  = "🔎 ",
 					color_devicons = true,
 					layout_config  = {
@@ -71,17 +79,4 @@ return {
 			pcall(require('telescope').load_extension, 'fzf')
 		end
 	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("telescope").load_extension "file_browser"
-			vim.api.nvim_set_keymap(
-				"n",
-				"<space>fb",
-				":Telescope file_browser path=%:p:h select_buffer=true<cr>",
-				{ noremap = true }
-			)
-		end
-	}
 }
