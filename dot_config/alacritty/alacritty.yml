@@ -21,6 +21,12 @@ font:
     style: Bold Italic 
   size: 15
 live_config_reload: true
+shell:
+  program: /opt/homebrew/bin/zsh
+  args:
+    - --login
+    - -c
+    - tmux
 # Kanagawa Alacritty Colors
 # colors:
 #   primary:
