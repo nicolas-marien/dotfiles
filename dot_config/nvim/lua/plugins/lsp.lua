@@ -15,12 +15,12 @@ return {
         'rafamadriz/friendly-snippets'
     },
     config = function()
-        require('neodev').setup{ library = { plugins = { "neotest" }, types = true } }
+        require('neodev').setup { library = { plugins = { "neotest" }, types = true } }
         require('mason').setup()
         require('fidget').setup()
         require 'mason-lspconfig'.setup {
             ensure_installed = { 'lua_ls', 'tsserver', 'cssls', 'bashls', 'docker_compose_language_service', 'dockerls',
-                'graphql', 'html', 'remark_ls', 'tailwindcss', 'terraformls', 'yamlls' }
+                'graphql', 'html', 'tailwindcss', 'terraformls', 'yamlls' }
         }
     end
 }
