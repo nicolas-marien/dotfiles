@@ -28,7 +28,7 @@ return {
 						PmenuSbar = { bg = theme.ui.bg_m1 },
 						PmenuThumb = { bg = theme.ui.bg_p2 },
 						BiscuitColor = { fg = colors.palette.fujiGray },
-						DiagnosticError = { fg = colors.palette.winterRed },
+						DiagnosticError = { bg = colors.palette.winterRed },
 					}
 				end,
 			})
