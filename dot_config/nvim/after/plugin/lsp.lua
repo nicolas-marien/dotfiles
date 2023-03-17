@@ -57,6 +57,7 @@ local on_attach = function(_, bufnr)
             title = ''
         })
     end, {desc = "Organize imports"})
+
 end
 
 mason_lspconfig.setup_handlers {
