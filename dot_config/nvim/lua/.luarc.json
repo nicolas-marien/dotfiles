@@ -1,0 +1,11 @@
+{
+    "workspace.library": [
+        "/Users/nicolasmarien/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+        "/opt/homebrew/Cellar/neovim/HEAD-6c39eda/share/nvim/runtime/lua",
+        "/Users/nicolasmarien/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+        "/opt/homebrew/Cellar/neovim/HEAD-6c39eda/share/nvim/runtime/lua",
+        "/Users/nicolasmarien/.local/share/chezmoi/dot_config/nvim/lua",
+        "/Users/nicolasmarien/.local/share/chezmoi/dot_config/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}
