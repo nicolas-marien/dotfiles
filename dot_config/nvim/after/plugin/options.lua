@@ -5,7 +5,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -19,7 +19,6 @@ vim.opt.smartindent = true
 
 vim.opt.spell = true
 
-
 -- Save undo history
 vim.o.undofile = true
 
@@ -29,7 +28,7 @@ vim.o.smartcase = true
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Set colorscheme
 vim.o.background = "dark"
@@ -37,10 +36,10 @@ vim.o.t_Co = 256
 vim.o.termguicolors = true
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menu,menuone,preview,noselect"
 
 -- Folding
-vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
@@ -55,4 +54,4 @@ vim.opt.incsearch = true
 
 vim.opt.list = true
 vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append("space:⋅")
