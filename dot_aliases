@@ -7,3 +7,7 @@ alias ca="chezmoi apply"
 alias lz="lazygit"
 alias nxb="nx run-many --target=build --parallel"
 alias nxt="nx run-many --target=test --parallel"
+
+ ch() {
+     git checkout "$(git branch | fzf| tr -d '[:space:]')"
+}
