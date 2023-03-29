@@ -9,6 +9,7 @@ fi
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit; compinit
 
+export VISUAL=nvim
 export EDITOR=nvim
 export HOMEBREW_NO_ANALYTICS=1
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
