@@ -1,16 +1,18 @@
 return {
-	'nvim-lualine/lualine.nvim',
+	"nvim-lualine/lualine.nvim",
 	config = function()
 		-- NOTE: see https://github.com/Strazil001/Nvim/blob/main/after/plugin/lualine.lua for the helper functions
 		local modes = {
-			'mode',
-			fmt = function(str) return str:sub(1, 1) end,
+			"mode",
+			fmt = function(str)
+				return str:sub(1, 1)
+			end,
 			separator = { left = "", right = "" },
 		}
 
 		local function getLspName()
-			local msg = 'No Active Lsp'
-			local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+			local msg = "No Active Lsp"
+			local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 			local clients = vim.lsp.get_active_clients()
 			if next(clients) == nil then
 				return msg
@@ -25,7 +27,7 @@ return {
 		end
 
 		local dia = {
-			'diagnostics',
+			"diagnostics",
 			separator = { left = "", right = "" },
 		}
 
@@ -43,7 +45,6 @@ return {
 			separator = { left = "", right = "" },
 		}
 
-
 		local space = {
 			function()
 				return " "
@@ -51,7 +52,7 @@ return {
 		}
 
 		local filename = {
-			'filename',
+			"filename",
 			separator = { left = "", right = "" },
 		}
 
@@ -62,19 +63,18 @@ return {
 			separator = { left = "", right = "" },
 		}
 
-
 		local fileformat = {
-			'fileformat',
+			"fileformat",
 			separator = { left = "", right = "" },
 		}
 
 		local encoding = {
-			'encoding',
+			"encoding",
 			separator = { left = "", right = "" },
 		}
 
 		local branch = {
-			'branch',
+			"branch",
 			separator = { left = "", right = "" },
 		}
 
@@ -82,12 +82,12 @@ return {
 			"diff",
 			separator = { left = "", right = "" },
 		}
-		require 'lualine'.setup {
+		require("lualine").setup({
 			options = {
 				icons_enabled = true,
 				theme = vim.g.nicolas_colorscheme,
-				component_separators = { left = '', right = '' },
-				section_separators = { left = '', right = '' },
+				component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				always_divide_middle = true,
 			},
 
@@ -100,7 +100,7 @@ return {
 				},
 				lualine_b = {
 					space,
-
+					dia,
 				},
 				lualine_c = {
 
@@ -119,10 +119,9 @@ return {
 					space,
 				},
 				lualine_z = {
-					dia,
 					lsp,
-				}
+				},
 			},
-		}
-	end
+		})
+	end,
 }

@@ -8,6 +8,19 @@ alias lz="lazygit"
 alias nxb="nx run-many --target=build --parallel"
 alias nxt="nx run-many --target=test --parallel"
 
- ch() {
-     git checkout "$(git branch | fzf| tr -d '[:space:]')"
+# NOTE: use fzf to choose a branch to checkout
+ch() {
+    git checkout "$(git branch | fzf| tr -d '[:space:]')"
+}
+
+kpp() {
+    local port="$1"
+    local pid=$(lsof -t -i :"$port")
+
+    if [[ -n "$pid" ]]; then
+        echo "Killing process $pid on port $port"
+        kill "$pid"
+    else
+        echo "No process found on port $port"
+    fi
 }

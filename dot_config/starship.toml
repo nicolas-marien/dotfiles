@@ -1,0 +1,12 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[docker_context]
+disabled = true
+
+[aws]
+format = 'on [$symbol($profile )]($style)'
+
+[git_status]
+disabled = true
+[git_branch]
+disabled = true
