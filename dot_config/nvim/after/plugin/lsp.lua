@@ -25,7 +25,21 @@ local on_attach = function(_, bufnr)
 	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 	nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
 	nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-	nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+	nmap("<leader>ds", function()
+		require("telescope.builtin").lsp_document_symbols({
+			symbols = {
+				"Class",
+				"Function",
+				"Method",
+				"Constructor",
+				"Interface",
+				"Module",
+				"Struct",
+				"Trait",
+				"Field",
+			},
+		})
+	end, "[D]ocument [S]ymbols")
 	nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 	-- See `:help K` for why this keymap
@@ -58,16 +72,25 @@ end
 
 mason_lspconfig.setup_handlers({
 	function(server_name)
-		if server_name ~= "tsserver" then
-			require("lspconfig")[server_name].setup({
+		if server_name == "tsserver" then
+			return require("lspconfig").tsserver.setup({
+				root_dir = require("lspconfig").util.root_pattern("package.json"),
 				capabilities = capabilities,
 				on_attach = on_attach,
 				settings = {},
 			})
+		elseif server_name == "jsonls" then
+			require("lspconfig").jsonls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+					},
+				},
+			})
 		else
-			require("lspconfig").tsserver.setup({
-
-				root_dir = require("lspconfig").util.root_pattern("package.json"),
+			require("lspconfig")[server_name].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
 				settings = {},
@@ -75,3 +98,5 @@ mason_lspconfig.setup_handlers({
 		end
 	end,
 })
+
+require("lspconfig").nxls.setup({})

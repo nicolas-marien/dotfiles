@@ -22,7 +22,6 @@ return {
 						vim.keymap.set(mode, l, r, opts)
 					end
 
-					-- Navigation
 					map("n", "]c", function()
 						if vim.wo.diff then
 							return "]c"
@@ -49,11 +48,18 @@ return {
 	{
 		"sindrets/diffview.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
+		opts = {},
 	},
 	{
 		"akinsho/git-conflict.nvim",
-		config = function()
-			require("git-conflict").setup()
-		end,
+		opts = {},
+	},
+	{
+		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		opts = {},
 	},
 }

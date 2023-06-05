@@ -20,20 +20,18 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		color_devicons = true,
-		format = function(entry, vim_item)
-			local kind = require("lspkind").cmp_format({
-				mode = "symbol_text",
-				maxwidth = 50,
-				color_devicons = true,
-				preset = "codicons",
-			})(entry, vim_item)
-
-			local strings = vim.split(kind.kind, "%s", { trimempty = true })
-			kind.kind = " " .. (strings[1] or "") .. " "
-			kind.menu = "    (" .. (strings[2] or "") .. ")"
-
-			return kind
+		format = function(_, item)
+			local icons = require("utils.ui").icons.kinds
+			if icons[item.kind] then
+				item.kind = icons[item.kind] .. item.kind
+			end
+			return item
 		end,
+	},
+	experimental = {
+		ghost_text = {
+			hl_group = "LspCodeLens",
+		},
 	},
 	snippet = {
 		expand = function(args)
@@ -68,7 +66,10 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
+		{ name = "copilot", group_index = 1 },
+		{ name = "nvim_lsp", group_index = 1 },
+		{ name = "buffer", group_index = 2 },
+		{ name = "path", group_index = 2 },
+		{ name = "luasnip", group_indez = 2 },
 	},
 })

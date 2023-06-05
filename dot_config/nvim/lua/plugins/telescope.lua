@@ -23,25 +23,35 @@ return {
 					},
 				},
 				defaults = {
+					path_display = { "truncate" },
+					winblend = 0,
 					file_ignore_patterns = {
 						"%.git/",
 						".node_modules",
 					},
-					prompt_prefix = "🔎 ",
+					prompt_prefix = "   ",
+					selection_caret = "  ",
+					entry_prefix = "  ",
+					initial_mode = "insert",
+					selection_strategy = "reset",
+					sorting_strategy = "ascending",
+					layout_strategy = "horizontal",
 					color_devicons = true,
 					layout_config = {
-						vertical = 0.5,
+						horizontal = {
+							prompt_position = "top",
+							preview_width = 0.55,
+							results_width = 0.8,
+						},
+						vertical = {
+							mirror = false,
+						},
+						width = 0.87,
+						height = 0.80,
+						preview_cutoff = 120,
 					},
-					borderchars = {
-						"─",
-						"│",
-						"─",
-						"│",
-						"┌",
-						"┐",
-						"┘",
-						"└",
-					},
+					border = {},
+					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 					mappings = {
 						i = {
 							["<C-u>"] = false,

@@ -59,3 +59,6 @@ colors:
 key_bindings:
   - { key: P, mods: Command, chars: "\x20\x73\x66" }
   - { key: F, mods: Command|Shift, chars: "\x20\x73\x67" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
+  - { key: LBracket, mods: Alt, chars: "\x15b" }
+  - { key: RBracket, mods: Alt, chars: "\x15d" }

@@ -1,12 +1,7 @@
 require("nvim-treesitter.configs").setup({
 	-- Add languages to be installed here that you want installed for treesitter
 	ensure_installed = {
-		"c",
-		"cpp",
-		"go",
 		"lua",
-		"python",
-		"rust",
 		"tsx",
 		"typescript",
 		"help",
@@ -28,6 +23,7 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 	textobjects = {
+		enable = true,
 		lsp_interop = {
 			enable = true,
 			border = "none",
@@ -68,15 +64,6 @@ require("nvim-treesitter.configs").setup({
 			goto_previous_end = {
 				["[M"] = "@function.outer",
 				["[]"] = "@class.outer",
-			},
-		},
-		swap = {
-			enable = true,
-			swap_next = {
-				["<leader>a"] = "@parameter.inner",
-			},
-			swap_previous = {
-				["<leader>A"] = "@parameter.inner",
 			},
 		},
 	},

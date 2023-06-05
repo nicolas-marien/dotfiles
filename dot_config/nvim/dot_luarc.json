@@ -7,5 +7,6 @@
          "globals": [
              "vim"
          ]
-     }
+     },
+    "workspace.checkThirdParty": false
 }

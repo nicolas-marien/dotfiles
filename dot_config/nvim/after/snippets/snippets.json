@@ -1,0 +1,7 @@
+{
+  "Private readonly": {
+    "prefix": ["pri"],
+    "body": ["private readonly $0"],
+    "description": "A private readonly member"
+  }
+}

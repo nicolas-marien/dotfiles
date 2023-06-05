@@ -8,6 +8,16 @@ alias lz="lazygit"
 alias nxb="nx run-many --target=build --parallel"
 alias nxt="nx run-many --target=test --parallel"
 
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dcs="docker compose stop"
+
+alias t='tmux'
+alias ta='tmux attach-session -t'
+alias tnew='tmux new-session -s'
+alias tls='tmux list-sessions'
+alias tkill='tmux kill-session -t'
+
 # NOTE: use fzf to choose a branch to checkout
 ch() {
     git checkout "$(git branch | fzf| tr -d '[:space:]')"

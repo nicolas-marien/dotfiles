@@ -55,3 +55,5 @@ vim.opt.incsearch = true
 vim.opt.list = true
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
+
+vim.opt.conceallevel = 3 -- Hide * markup for bold and italic
