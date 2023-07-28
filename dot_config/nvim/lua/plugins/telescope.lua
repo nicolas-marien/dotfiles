@@ -27,7 +27,6 @@ return {
 					winblend = 0,
 					file_ignore_patterns = {
 						"%.git/",
-						".node_modules",
 					},
 					prompt_prefix = "   ",
 					selection_caret = "  ",
@@ -70,6 +69,7 @@ return {
 				{ desc = "[S]earch current [W]ord" }
 			)
 			vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
+			vim.keymap.set("n", "<leader>so", require("telescope.builtin").oldfiles, { desc = "[S]earch by [O]ld" })
 			vim.keymap.set(
 				"n",
 				"<leader>sd",

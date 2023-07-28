@@ -59,6 +59,7 @@ return {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettierd,
 					null_ls.builtins.formatting.beautysh,
+					require("typescript.extensions.null-ls.code-actions"),
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
@@ -111,4 +112,28 @@ return {
 		end,
 	},
 	{ "dnlhc/glance.nvim", opts = {} },
+	{ "VidocqH/lsp-lens.nvim", opts = {} },
+	{
+		"kosayoda/nvim-lightbulb",
+		dependencies = {
+			"antoinemadec/FixCursorHold.nvim",
+		},
+		opts = { autocmd = { enabled = true } },
+		enabled = false,
+	},
+	{
+		"jose-elias-alvarez/typescript.nvim",
+	},
+	{
+		"zbirenbaum/copilot.lua",
+		opts = {
+			suggestion = { enabled = false },
+			panel = { enabled = false },
+		},
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+		dependencies = { "zbirenbaum/copilot.lua" },
+		opts = {},
+	},
 }

@@ -2,6 +2,7 @@ alias ls="exa --icons --git --grid -l -a"
 alias p="cd $HOME/Developer/projects"
 alias tmux="tmux -2"
 alias e="nvim"
+alias el="NVIM_APPNAME=lazy nvim"
 alias ce="chezmoi edit"
 alias ca="chezmoi apply"
 alias lz="lazygit"
@@ -20,16 +21,16 @@ alias tkill='tmux kill-session -t'
 
 # NOTE: use fzf to choose a branch to checkout
 ch() {
-    git checkout "$(git branch | fzf| tr -d '[:space:]')"
+    git checkout "$(git branch | fzf | tr -d '[:space:]')"
 }
 
 kpp() {
     local port="$1"
-    local pid=$(lsof -t -i :"$port")
+    local pids=$(lsof -t -i :"$port")
 
-    if [[ -n "$pid" ]]; then
-        echo "Killing process $pid on port $port"
-        kill "$pid"
+    if [[ -n "$pids" ]]; then
+        echo "Killing processes on port $port:"
+        echo "$pids" | xargs kill
     else
         echo "No process found on port $port"
     fi

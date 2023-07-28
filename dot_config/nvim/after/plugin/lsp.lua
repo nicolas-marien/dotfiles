@@ -73,12 +73,17 @@ end
 mason_lspconfig.setup_handlers({
 	function(server_name)
 		if server_name == "tsserver" then
-			return require("lspconfig").tsserver.setup({
-				root_dir = require("lspconfig").util.root_pattern("package.json"),
-				capabilities = capabilities,
-				on_attach = on_attach,
-				settings = {},
+			require("typescript").setup({
+				server = {
+					on_attach = on_attach,
+				},
 			})
+			-- return require("lspconfig").tsserver.setup({
+			-- 	root_dir = require("lspconfig").util.root_pattern("package.json"),
+			-- 	capabilities = capabilities,
+			-- 	on_attach = on_attach,
+			-- 	settings = {},
+			-- })
 		elseif server_name == "jsonls" then
 			require("lspconfig").jsonls.setup({
 				capabilities = capabilities,
