@@ -1,0 +1,18 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Nicolas Marien
+	email = mariennicolas@icloud.com
+[core]
+	editor = nvim
+	excludesfile = $HOME/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[pull]
+	rebase = true
+[pager]
+	branch = false
+[interactive]
+	diffFilter = diff-so-fancy --patch
