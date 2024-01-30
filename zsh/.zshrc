@@ -9,7 +9,6 @@ export TERM='xterm-256color'
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit; compinit
 
-export NVIM_APPNAME=lazy
 export VISUAL=nvim
 export EDITOR=nvim
 export HOMEBREW_NO_ANALYTICS=1
