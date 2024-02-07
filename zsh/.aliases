@@ -32,3 +32,16 @@ kpp() {
         echo "No process found on port $port"
     fi
 }
+clear_docker() {
+  # Stop all running containers
+  docker stop $(docker ps -aq)
+
+  # Remove all containers
+  docker rm $(docker ps -aq)
+
+  # Remove all images
+  docker rmi $(docker images -aq)
+
+  # Remove all volumes
+  docker volume rm $(docker volume ls -q)
+}
