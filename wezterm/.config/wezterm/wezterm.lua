@@ -1,9 +1,9 @@
 local wezterm = require("wezterm")
 local config = {}
 
-config.color_scheme = "kanagawabones"
+config.color_scheme = "Kanagawa (Gogh)"
 
-config.font = wezterm.font("Monaspace Argon")
+config.font = wezterm.font("Monaspace Neon")
 config.font_size = 14.0
 config.enable_tab_bar = false
 config.window_frame = {
@@ -13,11 +13,11 @@ config.window_frame = {
 	-- Whatever font is selected here, it will have the
 	-- main font setting appended to it to pick up any
 	-- fallback fonts you may have used there.
-	font = wezterm.font({ family = "Roboto", weight = "Bold" }),
+	font = wezterm.font({ family = "Monaspace Argon", weight = "Bold" }),
 
 	-- The size of the font in the tab bar.
 	-- Default to 10.0 on Windows but 12.0 on other systems
-	font_size = 12.0,
+	font_size = 14.0,
 
 	-- The overall background color of the tab bar when
 	-- the window is focused
