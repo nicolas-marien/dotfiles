@@ -1,9 +1,10 @@
 local wezterm = require("wezterm")
 local config = {}
 
-config.color_scheme = "Kanagawa (Gogh)"
+-- config.color_scheme = "Kanagawa (Gogh)"
+config.color_scheme = "Catppuccin Mocha"
 
-config.font = wezterm.font("Monaspace Neon")
+config.font = wezterm.font("Monaspace Argon")
 config.font_size = 14.0
 config.enable_tab_bar = false
 config.window_frame = {
