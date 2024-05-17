@@ -27,6 +27,11 @@ return {
         neotest = true,
         notify = true,
         which_key = true,
+        native_lsp = {
+          inlay_hints = {
+            background = false,
+          },
+        },
       },
     },
   },
