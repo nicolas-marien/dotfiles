@@ -18,12 +18,23 @@ return {
       })
     end,
   },
-  { "catppuccin/nvim", name = "catppuccin" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      integrations = {
+        neotest = true,
+        notify = true,
+        which_key = true,
+      },
+    },
+  },
   { "folke/twilight.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
