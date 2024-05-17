@@ -14,7 +14,7 @@ return {
           env = { ENVIRONMENT = "test" },
           jestConfigFile = function()
             local file = vim.fn.expand("%:p")
-            if string.find(file, "/packages/") then
+            if string.find(file, "/libs|apps/") then
               return string.match(file, "(.-/[^/]+/)src") .. "jest.config.ts"
             end
 
