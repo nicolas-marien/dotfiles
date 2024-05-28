@@ -9,6 +9,10 @@ export TERM='xterm-256color'
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit; compinit
 
+if [ -d "$HOME/local/nvim" ]; then
+    export PATH="$HOME/local/nvim/bin:$PATH"
+fi
+
 export VISUAL=nvim
 export EDITOR=nvim
 export HOMEBREW_NO_ANALYTICS=1
