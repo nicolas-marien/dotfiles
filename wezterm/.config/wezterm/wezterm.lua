@@ -7,6 +7,7 @@ return {
 	font = wezterm.font("Jetbrains Mono"),
 	font_size = 15.0,
 	enable_tab_bar = false,
+	window_close_confirmation = "NeverPrompt",
 	window_frame = {
 		-- The font used in the tab bar.
 		-- Roboto Bold is the default; this font is bundled
