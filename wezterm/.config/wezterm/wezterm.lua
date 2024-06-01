@@ -8,6 +8,7 @@ return {
 	font_size = 15.0,
 	enable_tab_bar = false,
 	window_close_confirmation = "NeverPrompt",
+	window_background_opacity = 0.95,
 	window_frame = {
 		-- The font used in the tab bar.
 		-- Roboto Bold is the default; this font is bundled
